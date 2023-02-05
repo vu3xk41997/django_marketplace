@@ -74,3 +74,16 @@ python manage.py migrate
 * Images won't be shown since django doesn't handle image for us
 * (Only in development) Import settings and static to marketplace/urls.py and concat static(MEDIA_URL,MEDIA_ROOT) to urlpatterns
 * Implement category secion in index/html
+
+## Detail page
+1. Add item detail in item/views.py using detail method
+* Create templates/item/detail.html in item folder
+* Implement item/detail.html to displace detail content
+2. Seperate detail urls from main urls by creating item/urls.py
+* Allow item urls to have primary key as integer in the path
+* Include item urls in main marketplace/urls.py after item path
+3. Add related items section beneath item detail page
+* Add related item objects (items in same category) in item/views.py
+* Excluding current item and only shows 3 items
+* Append related items to render in item/views.py
+* Implement related items section in detail.html (same is items section in index.html)
