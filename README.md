@@ -93,15 +93,15 @@ python manage.py migrate
 * Create core/urls.py and create path for views.index and views.contact
 * Remove contact path and include core.urls in marketplace/urls.py
 * Allows urls first loop through index and contact from core/urls.py before other urls when running marketplace/urls.py
-* This cause an error in footer since {% url 'contact' %} doesn't exist anymore
-* Replace {% url 'contact' %} with {% url 'core:contact' %} in core/base.html
+* This cause an error in footer since ```{% url 'contact' %}``` doesn't exist anymore
+* Replace ```{% url 'contact' %}``` with ```{% url 'core:contact' %}``` in core/base.html
 2. Create signup form page
 * Create core/forms.py for creating user, validation, etc.
 * Implement core/forms.py
 * Create view for signup form in core/views.py using core/form.html
 * Create core/form.html display information in signup form page
 * Add a path for signup form in core/urls.py
-* Change the herf of signup button in core/base.html to {% url 'core:signup' %}
+* Change the herf of signup button in core/base.html to ```{% url 'core:signup' %}```
 3. Style signup form
 * Add each label and field in core/signup.html, show error when field is not filled
 * In core/views.py signup(request), check if signup form has been submitted correctly. If true, redirect to login; else, stay on the same page and show error
