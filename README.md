@@ -114,7 +114,12 @@ python manage.py migrate
 * Create path for login in core/urls.py
 2. Handle error after login
 * User will be redirect to ./accounts/profile/, which is default django redirection after log in
-* Add ```LOGIN_URL = '/login/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'``` in marketplace/settings.py to change rediction urls
+* Add following code in marketplace/settings.py to change rediction urls:
+```
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+``` 
 3. Hide "sign up" and "log in" buttons in header after log in and add "inbox" and "dashboard" buttons instead
 * Add if-else statement in core/base.html to check if user is authenticated or not
 * If user is authenticated, show "inbox" and "dashboard" buttons
