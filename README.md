@@ -107,3 +107,15 @@ python manage.py migrate
 * In core/views.py signup(request), check if signup form has been submitted correctly. If true, redirect to login; else, stay on the same page and show error
 
 ## Logging in
+1. Create login form page
+* Add Authentication form in core/forms.py
+* Use login view imported from django in core/urls.py
+* Create core/login.html, copy from core/signup.html and implement to fit login 
+* Create path for login in core/urls.py
+2. Handle error after login
+* User will be redirect to ./accounts/profile/, which is default django redirection after log in
+* Add ```LOGIN_URL = '/login/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'``` in marketplace/settings.py to change rediction urls
+3. Hide "sign up" and "log in" buttons in header after log in and add "inbox" and "dashboard" buttons instead
+* Add if-else statement in core/base.html to check if user is authenticated or not
+* If user is authenticated, show "inbox" and "dashboard" buttons
+* If user is not authenticated, show "sign up" and "log in" buttons
